@@ -19,5 +19,5 @@ def format_single_linter_file(file_path: str, errors: list) -> dict:
 def format_linter_report(linter_report: dict) -> list:
     return {
         "errors": linter_report["errors"],
-        "path": linter_report["path"]
+        "path": format_single_linter_file(linter_report["path"], linter_report["errors"]),
     }
